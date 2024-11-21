@@ -1,3 +1,11 @@
+/*
+  Ejemplo del uso del monitor serial para mostrar datos de salida
+  del microcontrolador ATMEGA328P
+
+  Curso Esc. Sec. Tec. 54
+*/
+
+
 int num = 0;
 
 void setup() {
