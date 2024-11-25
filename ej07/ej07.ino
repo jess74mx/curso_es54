@@ -6,11 +6,13 @@
 */
 
 const byte IN1 = 2;			    // IN1 a pin digital 2
-const byte IN2 = 3;			    // IN2 a pin digital 3
-const byte ENA = 5;			    // ENA a pin digital 5
+const byte IN2 = 4;			    // IN2 a pin digital 3
+const byte ENA = 3;			    // ENA a pin digital 5
 const byte IN3 = 7;			    // IN3 a pin digital 7
 const byte IN4 = 8;			    // IN4 a pin digital 8
-const byte ENB = 9;			    // ENA a pin digital 9
+const byte ENB = 6;			    // ENA a pin digital 9
+
+const byte vel = 95;
 
 void setup(){
   pinMode(IN1, OUTPUT);		  // IN1 como salida	
@@ -19,16 +21,16 @@ void setup(){
   pinMode(IN3, OUTPUT);		  // IN3 como salida
   pinMode(IN4, OUTPUT);		  // IN4 como salida
   pinMode(ENB, OUTPUT);		  // ENB como salida
-  delay(100);
+  delay(5000);
 }
 
 void loop(){
   // Giro de motores en un sentido
-  digitalWrite(ENA, HIGH);	// ENA en alto habilita motor A
+  analogWrite(ENA, vel);	// ENA en alto habilita motor A
   digitalWrite(IN1, LOW);	// IN1 en cero logico
   digitalWrite(IN2, HIGH);	// IN2 en uno logico
 
-  digitalWrite(ENB, HIGH);	// ENB en alto habilita motor B
+  analogWrite(ENB, vel);	// ENB en alto habilita motor B
   digitalWrite(IN3, LOW);	// IN3 en cero logico
   digitalWrite(IN4, HIGH);	// IN4 en uno logico
   delay(3000);			// demora de 3 seg.
@@ -39,11 +41,11 @@ void loop(){
   delay(2000);			// demora de 2 seg.
 
   // Giro de motores en sentido contrario
-  digitalWrite(ENA, HIGH);	// ENA en alto habilita motor A
+  analogWrite(ENA, vel);	// ENA en alto habilita motor A
   digitalWrite(IN1, HIGH);	// IN1 en uno logico
   digitalWrite(IN2, LOW);	// IN2 en cero logico
 
-  digitalWrite(ENB, HIGH);	// ENB en alto habilita motor B
+  analogWrite(ENB, vel);	// ENB en alto habilita motor B
   digitalWrite(IN3, HIGH);	// IN3 en uno logico
   digitalWrite(IN4, LOW);	// IN4 en cero logico
   delay(3000);			// demora de 3 seg.
@@ -54,5 +56,3 @@ void loop(){
   delay(2000);			// demora de 2 seg.
 
 }
-
-
